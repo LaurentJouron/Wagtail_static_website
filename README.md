@@ -1,4 +1,4 @@
-<h1 align="center">Bienvenue sur le readme de Wagtail static website 👋</h1>
+<h1 align="center">Welcome on the readme de Wagtail static website 👋</h1>
 <p align="center">
   <a href="https://twitter.com/LaurentJouron">
     <img alt="Twitter: LaurentJouron" 
@@ -33,7 +33,7 @@ ___________
       <a href="https://www.python.org/">
         <img width="200px"
           src="https://www.python.org/static/img/python-logo.png" /><br />
-        <sub><b>Téléchargez Python</b></sub></a><br />
+        <sub><b>Download Python</b></sub></a><br />
       <a href="https://www.python.org/" title="Téléchargez Python" ></a> 
     </td>
     <td align="center">
@@ -69,26 +69,26 @@ ___________
 
 ___________
 
-<h1 align="center">Installation du site </h1>
+<h1 align="center">Website installation</h1>
 
-Pour commencer il faut cloner le projet grâce à l'url suivante :
+To start you need to clone the project with the following url :
   * ``git clone https://github.com/LaurentJouron/Wagtail_static_website.git``
 
-Il faut se déplacer dans le dossier:
+Move to the folder:
   * ``cd Wagtail_static_website``
 
-Voici la procédure pour afficher la page d'accueil du site:
+Here is the procedure to display the site home page:
 
-Créer un répertoire avec le nom .venv
+Create a .venv folder to install the virtual environment
   * ``mkdir .venv``
 
-Installer les bibliothèques nécessaires avec
+Install the required packages with
   * ``pipenv install``
 
-Activer l'environnement de travail (environnement virtuel) avec
+Enable the desktop environment with
   * ``pipenv shell``
 
-Démarrer le serveur de développement de Django avec
+Start the Django development server with
   * ``python manage.py runserver``
 
 ___________
