@@ -1,4 +1,4 @@
-<h1 align="center">Bienvenue sur le readme de Wagtail_static_website 👋</h1>
+<h1 align="center">Bienvenue sur le readme de Wagtail static website 👋</h1>
 <p align="center">
   <a href="https://twitter.com/LaurentJouron">
     <img alt="Twitter: LaurentJouron" 
@@ -9,6 +9,19 @@
       src="https://img.shields.io/github/followers/LaurentJouron?style=social" />
   </a>
 </p>
+
+<table>
+  <tr align="center">
+    <td align="center">
+        <a href="https://www.laurentjouron.dev/">
+            <img width="100px" src="https://www.laurentjouron.dev/media/images/profile_drawing_2X1IPCT.2e16d0ba.fill-170x170.png"/><br/>
+            <sub>
+                <b>Laurent Jouron</b>
+            </sub>
+        </a><br/>
+    </td>
+  </tr>
+</table>
 
 ___________
 
@@ -90,7 +103,6 @@ ___________
         <img src="https://raw.githubusercontent.com/LaurentJouron/LaurentJouron.github.io/main/ressources/img/logo/ikigai.png"
           width="100px;"/><br />
         <sub><b>Laurent Jouron</b></sub></a><br />
-      <a href="https://www.laurentjouron.dev/" title="Étudiant">🈸</a>
       <a href="https://github.com/LaurentJouron/Wagtail_static_website" title="Codeur de l'application">💻</a>
     </td>
   </tr>
