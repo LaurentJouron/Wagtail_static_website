@@ -94,7 +94,7 @@ Start the Django development server with
 ___________
 
 
-<h1 align="center">Auteur</h1>
+<h1 align="center">Author</h1>
 
 <table>
   <tr>
