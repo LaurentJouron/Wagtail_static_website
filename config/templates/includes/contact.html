@@ -1,22 +1,18 @@
 {% load static wagtailcore_tags wagtailimages_tags %}
 
-<div class="pt-6 lg:pt-8">
-    <table class="w-auto">
-      <tr>
-          <td class="font-body text-1xl text-primary dark:text-white lg:text-2xl">E-mail :</td>
-          <td class="pl-10 text-1xl font-body italic text-green dark:text-green-light lg:text-2xl">
-            <a href="mailto:jouronlaurent@homail.com?subject=Contact%20depuis%20laurentjouron.dev">
-                jouronlaurent@homail.com
-            </a>
-        </td>
-      </tr>
-      <tr>
-          <td class="font-body text-1xl text-primary dark:text-white lg:text-2xl">Téléphone :</td>
-          <td class="pl-10 text-1xl font-body italic text-green dark:text-green-light lg:text-2xl">
-            <a href="tel:+33612345678">
-                06 12 34 56 78
-            </a>
-        </td>
-      </tr>
-    </table>
-</div>
+<tr>
+  <td class="font-body text-1xl text-primary dark:text-white lg:text-2xl">E-mail : </td>
+  <td class="pl-10 text-1xl font-body italic text-green dark:text-green-light lg:text-2xl">
+    <a href="mailto:jouronlaurent@homail.com?subject=Contact%20depuis%20laurentjouron.dev">
+      {{ contact.email }}
+    </a>
+</td>
+</tr>
+<tr>
+  <td class="font-body text-1xl text-primary dark:text-white lg:text-2xl">Téléphone :</td>
+  <td class="pl-10 text-1xl font-body italic text-green dark:text-green-light lg:text-2xl">
+      <a href="tel:{{ contact.phone_number }}">
+        {{ contact.phone_number }}
+      </a>
+  </td>
+</tr>

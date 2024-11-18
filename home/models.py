@@ -5,6 +5,8 @@ from wagtail.admin.panels import FieldPanel, MultiFieldPanel
 
 from blog.models import BlogIndexPage, BlogPage
 from project.models import ProjectIndexPage, ProjectPage
+from experience.models import ExperienceIndexPage, ExperiencePage
+from misc.models import MiscPage
 
 
 class HomePage(Page):
@@ -69,9 +71,19 @@ class HomePage(Page):
             .order_by("-first_published_at")[:3]
         )
         context["project_index"] = ProjectIndexPage.objects.first()
-        context["project_posts"] = (
+        context["projects"] = (
             ProjectPage.objects.live()
             .public()
             .order_by("-first_published_at")[:3]
         )
+        context["experience_index"] = ExperienceIndexPage.objects.first()
+        context["experiences"] = (
+            ExperiencePage.objects.live()
+            .public()
+            .order_by("-first_published_at")[:2]
+        )
+        if misc_page := MiscPage.objects.first():
+            context["skills"] = misc_page.skill.all()[:5]
+        else:
+            context["skills"] = []
         return context

@@ -1,0 +1,7 @@
+{% load static wagtailimages_tags %}
+
+<tr>
+  <td class="font-body text-1xl text-primary dark:text-white lg:text-2xl">{{ skill.name }}</td>
+  <td><img src="{% static 'img/long-arrow-right.png' %}" alt="arrow right"/></td>
+  <td class="pl-1 text-1xl font-body italic text-green dark:text-green-light lg:text-2xl">{{ skill.level }}</td>
+</tr>

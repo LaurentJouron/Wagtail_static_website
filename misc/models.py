@@ -1,17 +1,30 @@
 from django.db import models
-
+from wagtail.models import Orderable
+from modelcluster.fields import ParentalKey
 from wagtail.models import Page
 from wagtail.fields import StreamField
 from wagtail import blocks
 from wagtail.images.blocks import ImageChooserBlock
-from wagtail.admin.panels import FieldPanel
-
+from wagtail.admin.panels import FieldPanel, InlinePanel
 from utils.models import (
     UtilsCodeBlock,
     UtilsResultBlock,
     UtilsCustomRichTextBlock,
     UtilsVideoBlock,
 )
+
+
+class Skill(Orderable):
+    page = ParentalKey(
+        "MiscPage", related_name="skill", on_delete=models.CASCADE
+    )
+    name = models.CharField(max_length=50)
+    level = models.CharField(max_length=50)
+
+    panels = [
+        FieldPanel("name"),
+        FieldPanel("level"),
+    ]
 
 
 class MiscPage(Page):
@@ -69,4 +82,5 @@ class MiscPage(Page):
     content_panels = Page.content_panels + [
         FieldPanel("html_subtitle"),
         FieldPanel("body"),
+        InlinePanel("skill", label="Skills"),
     ]

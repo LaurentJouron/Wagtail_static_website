@@ -16,7 +16,13 @@
     </p>
   </div>
 
-  {% include 'includes/contact.html' %}
+  <div class="pt-6 lg:pt-8">
+    <table class="w-auto">
+        {% for contact in page.contacts.all %}
+          {% include 'includes/contact.html' with contact=contact %}
+        {% endfor %}
+      </table>
+  </div>
 
   <form class="pt-4 form" action="{% pageurl page %}" method="POST">
     {% csrf_token %}

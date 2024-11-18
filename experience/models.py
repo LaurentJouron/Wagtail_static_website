@@ -18,6 +18,7 @@ from utils.models import (
 
 
 def validate_year(value):
+    """Validates that the year is a positive integer within a reasonable range."""
     current_year = datetime.now().year
     if value < 1980 or value > current_year:
         raise ValidationError(
@@ -26,6 +27,7 @@ def validate_year(value):
 
 
 class ExperienceIndexPage(Page):
+    max_count = 1
     subpage_types = ["experience.ExperiencePage"]
     parent_page_types = ["home.HomePage"]
 
@@ -36,23 +38,24 @@ class ExperienceIndexPage(Page):
     ]
 
     def get_context(self, request):
+        """Custom context to include paginated list of experiences."""
         context = super().get_context(request)
-
-        posts = (
+        experiences = (
             ExperiencePage.objects.live()
             .public()
             .order_by("-first_published_at")
         )
+        paginator = Paginator(experiences, 5)
         page = request.GET.get("page", 1)
 
-        paginator = Paginator(posts, 5)
         try:
-            posts = paginator.page(page)
+            experiences = paginator.page(page)
         except PageNotAnInteger:
-            posts = paginator.page(1)
+            experiences = paginator.page(1)
         except EmptyPage:
-            posts = paginator.page(paginator.num_pages)
-        context["posts"] = posts
+            experiences = paginator.page(paginator.num_pages)
+
+        context["experiences"] = experiences
         return context
 
 
@@ -60,18 +63,30 @@ class ExperiencePage(Page):
     parent_page_types = ["experience.ExperienceIndexPage"]
     logo = models.ForeignKey(
         "wagtailimages.Image",
-        null=True,
-        blank=True,
         on_delete=models.SET_NULL,
         related_name="+",
+        null=True,
+        blank=True,
+        help_text="Company logo",
     )
     date_in = models.IntegerField(
-        "Date d'entrée", blank=True, null=True, validators=[validate_year]
+        "Date d'entrée",
+        validators=[validate_year],
+        blank=True,
+        null=True,
+        help_text="Année de début de l'expérience",
     )
     date_out = models.IntegerField(
-        "Date de sortie", blank=True, null=True, validators=[validate_year]
+        "Date de sortie",
+        validators=[validate_year],
+        blank=True,
+        null=True,
+        help_text="Année de fin de l'expérience (laisser vide si actuelle)",
     )
-    summary = models.TextField(blank=True, max_length=500)
+    summary = models.TextField(
+        max_length=500,
+        help_text="Résumé de l'expérience",
+    )
     body = StreamField(
         [
             (
@@ -123,3 +138,14 @@ class ExperiencePage(Page):
         FieldPanel("date_out"),
         FieldPanel("body"),
     ]
+
+    def clean(self):
+        """Custom validation to ensure date_out is not before date_in."""
+        if self.date_out and self.date_out < self.date_in:
+            raise ValidationError(
+                "La date de fin ne peut pas être antérieure à la date de début."
+            )
+        super().clean()
+
+    def __str__(self):
+        return f"{self.title} ({self.date_in} - {self.date_out or 'présent'})"

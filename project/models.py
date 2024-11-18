@@ -43,19 +43,19 @@ class ProjectIndexPage(Page):
     def get_context(self, request):
         context = super().get_context(request)
 
-        posts = (
+        projects = (
             ProjectPage.objects.live().public().order_by("-first_published_at")
         )
         page = request.GET.get("page", 1)
 
-        paginator = Paginator(posts, 5)
+        paginator = Paginator(projects, 5)
         try:
-            posts = paginator.page(page)
+            projects = paginator.page(page)
         except PageNotAnInteger:
-            posts = paginator.page(1)
+            projects = paginator.page(1)
         except EmptyPage:
-            posts = paginator.page(paginator.num_pages)
-        context["posts"] = posts
+            projects = paginator.page(paginator.num_pages)
+        context["projects"] = projects
         return context
 
 

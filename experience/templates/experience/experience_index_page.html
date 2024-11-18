@@ -18,11 +18,27 @@
   </div>
 
   <div class="py-4 lg:py-10">
-      {% include 'includes/carrousel_simple.html' %}
+    <section class="section-caroussel" id="caroussel">
+      <article class="wrapper">
+        <div class="marquee marquee">
+          <div class="marquee__group">
+            {% for experience in experiences %}
+              {% include 'includes/carrousel_simple.html' %}
+            {% endfor %}
+          </div>
+  
+          <div aria-hidden="true" class="marquee__group">
+            {% for experience in experiences %}
+              {% include 'includes/carrousel_simple.html' %}
+            {% endfor %}
+          </div>
+        </div>
+      </article>
+    </section>
   </div>
 
   <div class="pt-4 lg:pt-6">
-    {% for experience in posts %}
+    {% for experience in experiences %}
       {% include 'includes/experience_preview.html' with experience=experience %}
     {% endfor %}
   </div>

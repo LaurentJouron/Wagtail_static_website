@@ -1,5 +1,6 @@
 import os
 import pymysql
+from django.utils.translation import gettext_lazy as _
 
 from config import BASE_DIR, env
 
@@ -50,6 +51,7 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "django.middleware.security.SecurityMiddleware",
+    "django.middleware.locale.LocaleMiddleware",
     "wagtail.contrib.redirects.middleware.RedirectMiddleware",
 ]
 
@@ -109,6 +111,15 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
+
+LOCAL_PATHS = [
+    os.path.join(BASE_DIR, "locale"),
+]
+
+LANGUAGE = [
+    ("en", _("English")),
+    ("fr", _("Français")),
+]
 
 LANGUAGE_CODE = "fr-fr"
 TIME_ZONE = "UTC"

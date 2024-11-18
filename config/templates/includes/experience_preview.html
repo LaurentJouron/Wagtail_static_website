@@ -1,5 +1,5 @@
-
 {% load static wagtailimages_tags %}
+
 <div class="pt-2 pb-4">
     <div class="mb-4 flex items-center justify-between border border-grey-lighter px-4 py-4 sm:px-6">
       <span class="inline-block rounded-full px-4 py-1 font-body text-sm">
@@ -15,7 +15,7 @@
         </h4>
         <div class="flex items-center pt-2 mb-5">
             <p class="pr-2 font-body font-light text-primary dark:text-sm text-grey font-light">
-              <a href="{{ post.url }}">🗓️ {{ experience.date_in }} - {{ experience.date_out }}</a>
+              <a href="{{ experience.url }}">🗓️ {{ experience.date_in }} - {{ experience.date_out }}</a>
             </p>
         </div>
 
@@ -31,5 +31,3 @@
     </div>
   </div>
 </div>
-
-
