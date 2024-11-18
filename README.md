@@ -1,4 +1,4 @@
-<h1 align="center">Bienvenue sur le readme de Wagtail_static_website 👋</h1>
+<h1 align="center">Welcome on the readme de Wagtail static website 👋</h1>
 <p align="center">
   <a href="https://twitter.com/LaurentJouron">
     <img alt="Twitter: LaurentJouron" 
@@ -10,6 +10,19 @@
   </a>
 </p>
 
+<table>
+  <tr align="center">
+    <td align="center">
+        <a href="https://www.laurentjouron.dev/">
+            <img width="100px" src="https://www.laurentjouron.dev/media/images/profile_drawing_2X1IPCT.2e16d0ba.fill-170x170.png"/><br/>
+            <sub>
+                <b>Laurent Jouron</b>
+            </sub>
+        </a><br/>
+    </td>
+  </tr>
+</table>
+
 ___________
 
 <h1 align="center">Langage</h1>
@@ -20,7 +33,7 @@ ___________
       <a href="https://www.python.org/">
         <img width="200px"
           src="https://www.python.org/static/img/python-logo.png" /><br />
-        <sub><b>Téléchargez Python</b></sub></a><br />
+        <sub><b>Download Python</b></sub></a><br />
       <a href="https://www.python.org/" title="Téléchargez Python" ></a> 
     </td>
     <td align="center">
@@ -56,41 +69,40 @@ ___________
 
 ___________
 
-<h1 align="center">Installation du site </h1>
+<h1 align="center">Website installation</h1>
 
-Pour commencer il faut cloner le projet grâce à l'url suivante :
+To start you need to clone the project with the following url :
   * ``git clone https://github.com/LaurentJouron/Wagtail_static_website.git``
 
-Il faut se déplacer dans le dossier:
+Move to the folder:
   * ``cd Wagtail_static_website``
 
-Voici la procédure pour afficher la page d'accueil du site:
+Here is the procedure to display the site home page:
 
-Créer un répertoire avec le nom .venv
+Create a .venv folder to install the virtual environment
   * ``mkdir .venv``
 
-Installer les bibliothèques nécessaires avec
+Install the required packages with
   * ``pipenv install``
 
-Activer l'environnement de travail (environnement virtuel) avec
+Enable the desktop environment with
   * ``pipenv shell``
 
-Démarrer le serveur de développement de Django avec
+Start the Django development server with
   * ``python manage.py runserver``
 
 ___________
 
 
-<h1 align="center">Auteur et collaborateurs</h1>
+<h1 align="center">Author</h1>
 
 <table>
   <tr>
     <td align="center">
       <a href="https://github.com/LaurentJouron">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlW-w7O7g3hQTw8qcIAy3LCRhiHg5tUPfvVg&usqp=CAU"
+        <img src="https://raw.githubusercontent.com/LaurentJouron/LaurentJouron.github.io/main/ressources/img/logo/ikigai.png"
           width="100px;"/><br />
         <sub><b>Laurent Jouron</b></sub></a><br />
-      <a href="https://laurentjouron.github.io/" title="Étudiant">🈸</a>
       <a href="https://github.com/LaurentJouron/Wagtail_static_website" title="Codeur de l'application">💻</a>
     </td>
   </tr>
